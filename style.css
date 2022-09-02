@@ -1,0 +1,23 @@
+:root{
+    --greenGray: #5E6973;
+    --blueGray: #696D7D;
+    --opal: #C6D8D3;
+    --darkBlue: #030027;
+    --camel: #D19A5E;
+}
+
+header{
+    color: var(--darkBlue);
+    background-color: var(--opal);
+    padding: .7em;
+}
+
+th, td{
+    padding: .5em;
+}
+
+#tableholder{
+    display: flex;
+    justify-content: center;
+
+}
