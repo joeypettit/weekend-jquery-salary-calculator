@@ -6,18 +6,100 @@
     --camel: #D19A5E;
 }
 
+body{
+    background-color: var(--blueGray);
+}
+
 header{
     color: var(--darkBlue);
     background-color: var(--opal);
     padding: .7em;
+    border-radius: 1em;
+    text-align: center;
+    
+}
+
+main{
+    width: 645px;
+    
 }
 
 th, td{
     padding: .5em;
+    text-align: center;
 }
 
 #tableholder{
     display: flex;
     justify-content: center;
+    background-color: var(--opal);
+}
+
+table{
+    background-color: var(--opal);
+    border-radius: 1em;
+    min-width: 382px;
+}
+
+
+
+
+
+form {
+    background-color: var(--opal);
+    margin-left: 2em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    width: 5em;
+    padding: 1em;
+    border-radius: 1em;
+
+    /* fix right padding */
+     padding: .25em 5.3em .25em .25em;
+    
+}
+
+#formPlusTable{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 2em;
+    
 
 }
+
+#formUl{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    /* remove list styling */
+    padding-inline-start: 0px;
+    list-style-type: none;
+}
+
+.formList{
+    padding: .25em;
+}
+
+.inputLabel{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+li.button{
+    padding: .25em;
+
+}
+
+/* 
+#submitButton{
+    margin-left: .25em;
+    text-align: center;
+} */
+
