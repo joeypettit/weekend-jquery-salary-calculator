@@ -3,7 +3,7 @@
     --blueGray: #696D7D;
     --opal: #C6D8D3;
     --darkBlue: #030027;
-    --camel: #D19A5E;
+    --delete:  rgba(255, 151, 151, 0.84);
 }
 
 body{
@@ -110,5 +110,22 @@ li.button{
 }
 
 #deleteButton{
-    background-color: rgb(239, 152, 166);
+    background-color: var(--delete);
+    font-weight: bolder;
+    padding: 1px;
+    
+}
+
+/* table footer: */
+
+#totalCostText{
+    border-top: 1px solid var(--darkBlue);
+    font-weight: bold;
+}
+
+
+/* applied to tfoot when costs exceed 20000 */
+.warning{
+    background-color: var(--delete);
+    border: #030027;
 }

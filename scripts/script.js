@@ -53,7 +53,7 @@ function submitButton(){
 
     // use getMonthlyCost to return total monthly costs and assign this to variable
     let monthlyCost = getMonthlyCost(); //should return the monthly cost
-    // TEST: console.log(monthlyCost);
+    console.log(monthlyCost);
 
     // use buildTable to assign updated array to DOM, should take monthlyCost as arguement
     buildTable(monthlyCost); // 
@@ -105,14 +105,29 @@ function buildTable(monthlyCost){
         `);
     }
 
-    
+    // empty footer then append new monthly cost to table footer
+    $('#totalCostText').empty();
+    $('#totalCostText').append(`Total Monthly Costs: $${monthlyCost}`);
+
+
+    if(monthlyCost > 20000){
+        $('#totalCost').addClass('warning');
+    } else{
+        $('#totalCost').removeClass('warning');
+    }
+
+
 
 
 }
 
 // enables functionality of delete button, which deletes the row it is in.
 function deleteButton(event){
+    // removes employee row from table
     $(event.target).closest('#tableRow').remove();
+
+    // REMOVE EMPLOYEE FROM GLOBAL ARRAY
+    
 }
 
 
@@ -122,3 +137,8 @@ function deleteButton(event){
 
 // Add if time:
 // Focus style for form
+// remove employee from global array when deleted, update total monthly cost
+
+
+// Double Check:
+// Does red go away when total monthly costs is below 20000
