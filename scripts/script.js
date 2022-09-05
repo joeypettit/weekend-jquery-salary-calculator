@@ -1,21 +1,27 @@
 $(onReady);
 
 // global array of employee info
-let employeeData =[{
-        firstName: 'Joe',
-        lastName: 'Johnson',
-        idNumber: 11111,
-        jobTitle: 'firstEntryGUy',
-        salary: 1000
-    },
-    {
-        firstName: 'Jane',
-        lastName: 'Anderson',
-        idNumber: 22222,
-        jobTitle: 'secondEntryGal',
-        salary: 2000
-    }
-];
+let employeeData =[];
+    
+    
+    
+    // ~~~~~~~~~~~SAMPLE EMPLOYEES~~~~~~~~~~~
+    // {
+    //     firstName: 'Joe',
+    //     lastName: 'Johnson',
+    //     idNumber: 11111,
+    //     jobTitle: 'firstEntryGUy',
+    //     salary: 1000
+    // },
+    // {
+    //     firstName: 'Jane',
+    //     lastName: 'Anderson',
+    //     idNumber: 22222,
+    //     jobTitle: 'secondEntryGal',
+    //     salary: 2000
+    // }
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 function onReady(){
     console.log('Jq and Js')
@@ -53,7 +59,7 @@ function submitButton(){
 
     // use getMonthlyCost to return total monthly costs and assign this to variable
     let monthlyCost = getMonthlyCost(); //should return the monthly cost
-    console.log(monthlyCost);
+    // TEST: console.log(monthlyCost);
 
     // use buildTable to assign updated array to DOM, should take monthlyCost as arguement
     buildTable(monthlyCost); // 
@@ -92,10 +98,13 @@ function buildTable(monthlyCost){
     $('#tableBody').empty();
 
     // loop over each employee object from global array
-    // append each employee key to table in DOM with delete button
+    // append each employee key to table in DOM along with delete button
+    // assign the <tr> data attribute ==> data-id = employee ID number. 
+    // This will be used to find the employee in the global array when 
+    // they are deleted from the DOM.
     for(let employee of employeeData){
         $('#tableBody').append(`
-            <tr id="tableRow">
+            <tr class="tableRow" data-id="${employee.idNumber}">
                 <td>${employee.lastName}, ${employee.firstName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
@@ -105,26 +114,53 @@ function buildTable(monthlyCost){
         `);
     }
 
-    // empty footer then append new monthly cost to table footer
-    $('#totalCostText').empty();
-    $('#totalCostText').append(`Total Monthly Costs: $${monthlyCost}`);
+    updateMonthlyCost(monthlyCost);
+    
+ 
+}
 
+function updateMonthlyCost(monthlyCost){
+   // empty footer then append new monthly cost to table footer
+   $('#totalCostText').empty();
+   $('#totalCostText').append(`Total Monthly Costs: $${monthlyCost}`);
 
-    if(monthlyCost > 20000){
-        $('#totalCost').addClass('warning');
-    } else{
-        $('#totalCost').removeClass('warning');
-    }
-
-
-
+    // if montly cost is greater than 20000, add warning class to footer
+    // warning class adds red background color.
+    // remove the red background if under 20000.
+   if(monthlyCost > 20000){
+       $('#totalCost').addClass('warning');
+   } else{
+       $('#totalCost').removeClass('warning');
+   }
 
 }
 
+
+
+
+
 // enables functionality of delete button, which deletes the row it is in.
 function deleteButton(event){
+
+    // assign ID number data from employee <tr> element to variable.
+    let employeeIDData = $(event.target).closest('.tableRow').data('id');
+
+    // compare variable to ID number of each employee in global array. 
+    // when it matches, splice that employee object out and break
+    for(let i = 0; i<employeeData.length; i++){
+        if(employeeData[i].idNumber === employeeIDData){
+            let removedEmployee = employeeData.splice(i,1);
+            // TEST: console.log('Employee Removed From Global Array', removedEmployee);
+            break;
+        }
+    }
+
+    // update monthly cost and append to DOM
+    updateMonthlyCost(getMonthlyCost());
+
+
     // removes employee row from table
-    $(event.target).closest('#tableRow').remove();
+    $(event.target).closest('.tableRow').remove();
 
     // REMOVE EMPLOYEE FROM GLOBAL ARRAY
     
