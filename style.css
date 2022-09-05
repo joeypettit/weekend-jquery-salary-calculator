@@ -109,9 +109,6 @@ li.button{
 
 }
 
-/* 
-#submitButton{
-    margin-left: .25em;
-    text-align: center;
-} */
-
+#deleteButton{
+    background-color: rgb(239, 152, 166);
+}

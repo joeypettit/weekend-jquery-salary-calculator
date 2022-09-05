@@ -50,13 +50,13 @@ function submitButton(){
 
     // use getMonthlyCost to return total monthly costs and assign this to variable
     let monthlyCost = getMonthlyCost(); //should return the monthly cost
+    // TEST: console.log(monthlyCost);
 
-
-
-    buildTable(); // should take monthly cost as arguement
-
+    // use buildTable to assign updated array to DOM, should take monthlyCost as arguement
+    buildTable(monthlyCost); // 
 
 } // end submitButton
+
 
 // this function calculates the monthly cost based on the annual salary information
 // from the global array and returns the monthly cost.
@@ -64,22 +64,53 @@ function getMonthlyCost(){
     //TEST: console.log('in getMonthlyCost');
 
     // loop over each employee, adding their salary to yearlyCost
-    let yearlyCost
+    let yearlyCost = 0;
     for(let employee of employeeData){
         yearlyCost += employee.salary;
-        console.log('Employee Salary: ', employee.salary);
-        console.log('Yearly Cost: ', yearlyCost);
+
+        // TEST: console.log('Employee Salary: ', employee.salary, 'Yearly Cost: ', yearlyCost);
+        
     }
-    console.log('Yearly Cost: ', yearlyCost);
+    //TEST: console.log('Yearly Cost: ', yearlyCost);
 
-    // divide montlyCost by 12 (12 months in a year).
+    // divide montlyCost by 12 (12 months in a year), assign monthlyCost and return
+    let monthlyCost = yearlyCost/12
 
-
+    return monthlyCost
 }
 
 // This function builds the table on the DOM using the global array.
 // If monthly costs exceed $20,000 it will turn the table footer background color
-// red.
-function buildTable(){
+// red. It takes the total montly cost as an arguement
+function buildTable(monthlyCost){
+    // TEST: console.log('In Build Table', monthlyCost);
+
+    // empty table body
+    $('#tableBody').empty();
+
+    // loop over each employee object from global array
+    // append each employee key to table in DOM with delete button
+    for(let employee of employeeData){
+        $('#tableBody').append(`
+            <tr>
+                <td>${employee.lastName}, ${employee.firstName}</td>
+                <td>${employee.idNumber}</td>
+                <td>${employee.jobTitle}</td>
+                <td>$${employee.salary}</td>
+                <td><button id="deleteButton" type="button">X</button></td>
+            </tr>
+        `);
+    }
+
 
 }
+
+
+
+
+
+
+
+
+// Add if time:
+// Focus style for form
