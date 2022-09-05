@@ -12,9 +12,11 @@
 <body>
    
     <main>
-        <header>
-            <h1>Salary Calculator</h1>
-        </header>
+        <div id="headerHolder">
+            <header>
+                <h1>Salary Calculator</h1>
+            </header>
+         </div>  
         <div id="formPlusTable">
             <form>
                 <h2>Add Employee:</h2>
@@ -26,7 +28,7 @@
                         <label class="inputLabel" for="lastNameIn">Last Name:</label>
                         <input id="lastNameIn"  class="formIn" placeholder="Last Name" type="text"></li>
                     <li class="formList">
-                        <label class="inputLabel" for="idNumberIn">Employee Id:</label>
+                        <label class="inputLabel" for="idNumberIn">Employee ID:</label>
                         <input id="idNumberIn"  class="formIn" placeholder="Employee ID" type="number"></li>
                     <li class="formList">
                         <label class="inputLabel" for="jobTitleIn">Job Title:</label>
@@ -44,21 +46,24 @@
                 <table>
                     <thead>
                         <tr class="tableHeads">
-                            <th>Name</th><th>Id Number</th><th>Job Title</th><th>Annual Salary</th><th><button id="hiddenDeleteButton" type="button">X</button></th>
+                            <th>Name</th><th>ID Number</th><th>Job Title</th><th>Annual Salary</th><th class="hidden"><button class="hidden" type="button">X</button></th>
                         </tr>
+                        <tr>
+                            <td class='horizontalLine' colspan="100%"></td>
+                          </tr>
                     </thead>
                     <tbody id="tableBody">
                         <!-- Employee info will go here -->
                         <tr>
-                            <td></td>
+                            <td class="hidden"></td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="hidden"></td>
                         </tr>
                     </tbody>
                     <tfoot id="totalCost">
                         <tr>
-                            <td id="totalCostText" colspan="100%">Total Monthly Costs: $0</td>
+                            <td id="totalCostText" colspan="100%" class="roundedCorners">Total Monthly Costs: $0</td>
                         </tr>
                     </tfoot>
                 </table>

@@ -32,6 +32,7 @@ function onReady(){
     // click handler for delete button.
     $('#tableBody').on('click', '#deleteButton', deleteButton);
 
+    $(".tableRow:odd ").addClass('oddRow');
 
 }
 
@@ -118,6 +119,9 @@ function buildTable(monthlyCost){
     }
 
     appendMonthlyCost(monthlyCost);
+
+    //color every other <tr> with a slightly darker color
+    $(".tableRow:odd ").addClass('oddRow');
     
  
 }
