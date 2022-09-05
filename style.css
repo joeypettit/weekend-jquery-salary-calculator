@@ -2,62 +2,52 @@
     --greenGray: #5E6973;
     --blueGray: #696D7D;
     --opal: #C6D8D3;
-    --darkBlue: #030027;
+    --darkGreen: #003641;
     --delete:  rgba(255, 151, 151, 0.84);
 }
 
 body{
     background-color: var(--blueGray);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* Main includes header and table/form div */
+main{
+    width: 645px;
 }
 
 header{
-    color: var(--darkBlue);
+    color: var(--darkGreen);
     background-color: var(--opal);
     padding: .7em;
     border-radius: 1em;
     text-align: center;
 
-    border-color: #5E6973;
+    border-color: var(--blueGray);
     border-style: solid;
     border-width: .4em;
-    
 }
 
-main{
-    width: 645px;
-    
-}
 
-th, td{
-    padding: .5em;
-    text-align: center;
-}
 
-#tableholder{
+/* Form plus Table includes form and table divs  */
+#formPlusTable{
     display: flex;
-    justify-content: center;
-    background-color: var(--opal);
-}
+    flex-direction: row;
 
-table{
-    background-color: var(--opal);
-    border-radius: 1em;
-    min-width: 382px;
-
-    border-color: #5E6973;
-    border-style: solid;
-    border-width: .4em;
+    margin-top: 2em;
 }
 
 
 
 
 
+/* FORM STYLING */
 form {
     background-color: var(--opal);
-    margin-left: 2em;
-    margin-bottom: 2em;
-    margin-right: 2em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
     width: 5em;
     padding: 1em;
     border-radius: 1em;
@@ -69,15 +59,6 @@ form {
     border-style: solid;
     border-width: .4em;
     
-}
-
-#formPlusTable{
-    display: flex;
-    flex-direction: row;
-
-    margin-top: 2em;
-    
-
 }
 
 #formUl{
@@ -100,6 +81,7 @@ form {
     width: 100px;
 }
 
+/* FORM HEADER  */
 h2{
     font-size: 20px;
 }
@@ -109,23 +91,75 @@ li.button{
 
 }
 
+
+
+
+
+/* TABLE ELEMENTS  */
+th, td{
+    padding: .5em;
+    text-align: center;
+}
+
+th{
+    border-bottom: 1px solid var(--darkGreen);
+}
+
+#tableholder{
+    display: flex;
+    justify-content: center;
+    background-color: var(--opal);
+}
+
+table{
+    background-color: var(--opal);
+    border-radius: 1em;
+    min-width: 500px;
+
+    border-color: #5E6973;
+    border-style: solid;
+    border-width: .4em;
+}
+
+.tableHeads{
+        border-top: 1px solid var(--darkGreen);
+        font-weight: bold;
+        border-radius: 0em 0em 0.5em 0.5em;
+}
+
+
+
+
+
+
+/* hidden for spacing of table when empty  */
+#hiddenDeleteButton{
+    visibility: hidden;
+    
+}
+
+
+
+
+
+
 #deleteButton{
     background-color: var(--delete);
     font-weight: bolder;
     padding: 1px;
-    
 }
+
 
 /* table footer: */
-
 #totalCostText{
-    border-top: 1px solid var(--darkBlue);
+    border-top: 1px solid var(--darkGreen);
     font-weight: bold;
+    border-radius: 0em 0em .5em .5em;    
 }
-
 
 /* applied to tfoot when costs exceed 20000 */
 .warning{
     background-color: var(--delete);
+    
     border: #030027;
 }

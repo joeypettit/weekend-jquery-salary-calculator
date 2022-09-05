@@ -20,7 +20,7 @@ let employeeData =[];
     //     jobTitle: 'secondEntryGal',
     //     salary: 2000
     // }
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 function onReady(){
@@ -64,6 +64,9 @@ function submitButton(){
     // use buildTable to assign updated array to DOM, should take monthlyCost as arguement
     buildTable(monthlyCost); // 
 
+    // clear all fields for next entry
+    $('.formIn').val('');
+
 } // end submitButton
 
 
@@ -85,7 +88,7 @@ function getMonthlyCost(){
     // divide montlyCost by 12 (12 months in a year), assign monthlyCost and return
     let monthlyCost = yearlyCost/12
 
-    return monthlyCost
+    return monthlyCost.toFixed(2);
 }
 
 // This function builds the table on the DOM using the global array.
@@ -114,12 +117,12 @@ function buildTable(monthlyCost){
         `);
     }
 
-    updateMonthlyCost(monthlyCost);
+    appendMonthlyCost(monthlyCost);
     
  
 }
 
-function updateMonthlyCost(monthlyCost){
+function appendMonthlyCost(monthlyCost){
    // empty footer then append new monthly cost to table footer
    $('#totalCostText').empty();
    $('#totalCostText').append(`Total Monthly Costs: $${monthlyCost}`);
@@ -134,10 +137,6 @@ function updateMonthlyCost(monthlyCost){
    }
 
 }
-
-
-
-
 
 // enables functionality of delete button, which deletes the row it is in.
 function deleteButton(event){
@@ -156,13 +155,10 @@ function deleteButton(event){
     }
 
     // update monthly cost and append to DOM
-    updateMonthlyCost(getMonthlyCost());
-
+    appendMonthlyCost(getMonthlyCost());
 
     // removes employee row from table
     $(event.target).closest('.tableRow').remove();
-
-    // REMOVE EMPLOYEE FROM GLOBAL ARRAY
     
 }
 
@@ -173,8 +169,8 @@ function deleteButton(event){
 
 // Add if time:
 // Focus style for form
-// remove employee from global array when deleted, update total monthly cost
 
 
-// Double Check:
-// Does red go away when total monthly costs is below 20000
+// style warning class with rounded border
+// style table to fit better on page, consider adding lines
+// alternate colors on table rows

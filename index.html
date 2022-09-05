@@ -21,19 +21,19 @@
                 <ul id="formUl">
                     <li class="formList">
                         <label class="inputLabel" for="firstNameIn">First Name:</label>
-                        <input id="firstNameIn" placeholder="First Name" type="text"></li>
+                        <input id="firstNameIn" class="formIn" placeholder="First Name" type="text"></li>
                     <li class="formList">
                         <label class="inputLabel" for="lastNameIn">Last Name:</label>
-                        <input id="lastNameIn"  placeholder="Last Name" type="text"></li>
+                        <input id="lastNameIn"  class="formIn" placeholder="Last Name" type="text"></li>
                     <li class="formList">
                         <label class="inputLabel" for="idNumberIn">Employee Id:</label>
-                        <input id="idNumberIn"  placeholder="Employee ID" type="number"></li>
+                        <input id="idNumberIn"  class="formIn" placeholder="Employee ID" type="number"></li>
                     <li class="formList">
                         <label class="inputLabel" for="jobTitleIn">Job Title:</label>
-                        <input id="jobTitleIn"  placeholder="Job Title" type="text"></li>
+                        <input id="jobTitleIn"  class="formIn" placeholder="Job Title" type="text"></li>
                     <li class="formList">
                         <label class="inputLabel" for="annualSalaryIn">Annual Salary:</label>
-                        <input id="annualSalaryIn" placeholder="Annual Salary" type="number">
+                        <input id="annualSalaryIn" class="formIn" placeholder="Annual Salary" type="number">
                     </li>
                     <li class="button">
                         <button id="submitButton" type="button">Submit</button>
@@ -43,13 +43,18 @@
             <div id="tableHolder">
                 <table>
                     <thead>
-                        <tr>
-                            <th>Name</th><th>Id Number</th><th>Job Title</th><th>Annual Salary</th><th></th>
+                        <tr class="tableHeads">
+                            <th>Name</th><th>Id Number</th><th>Job Title</th><th>Annual Salary</th><th><button id="hiddenDeleteButton" type="button">X</button></th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        <!-- Employee info goes here -->
-                        
+                        <!-- Employee info will go here -->
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
                     </tbody>
                     <tfoot id="totalCost">
                         <tr>
