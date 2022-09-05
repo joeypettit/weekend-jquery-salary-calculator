@@ -23,6 +23,9 @@ function onReady(){
     // click handler for submit button.
     $('#submitButton').on('click', submitButton);
 
+    // click handler for delete button.
+    $('#tableBody').on('click', '#deleteButton', deleteButton);
+
 
 }
 
@@ -92,7 +95,7 @@ function buildTable(monthlyCost){
     // append each employee key to table in DOM with delete button
     for(let employee of employeeData){
         $('#tableBody').append(`
-            <tr>
+            <tr id="tableRow">
                 <td>${employee.lastName}, ${employee.firstName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
@@ -102,10 +105,15 @@ function buildTable(monthlyCost){
         `);
     }
 
+    
+
 
 }
 
-
+// enables functionality of delete button, which deletes the row it is in.
+function deleteButton(event){
+    $(event.target).closest('#tableRow').remove();
+}
 
 
 
