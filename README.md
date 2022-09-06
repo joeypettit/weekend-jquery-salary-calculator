@@ -2,8 +2,6 @@ Salary Calculator
 
 Duration: Weekend Challenge Project
 
-This project was created over a weekend. 
-
 Description:
 The Salary Calculator includes a web form which allows the user (e.g. a small business owner) to add their employees' information to a table. Upon submission, the employee information is stored as an object in an array. The employee information found in each object is then appended to a table displayed in the DOM. Users may also remove specific employees from the table with delete buttons included in each employee row (this action updates the object array as well). Adding to and deleting from the table automatically updates the monthly cost feature found at the bottom of the table. This feature will also alert the user if they have exceeded their monthly budget (set to $20,000) by changing its background color to red. Because information captured by the form is stored in an array, additional features which utilize this data to perform calculations could easily be added.
 
@@ -44,8 +42,8 @@ Built With:
     -GitHub
 
 
-Acknowledgement
+Acknowledgement:
 Thanks to Emerging Digital Academy as well as their curriculum partner Prime Digital Academy for providing me with the resources to complete this project.
 
-Support
+Support:
 If you have suggestions or issues, please email me at pettitbass@gmail.com
