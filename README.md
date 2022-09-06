@@ -21,15 +21,15 @@ Installation:
 
 Download Chrome here: https://www.google.com/chrome/dr/download/?brand=JJTC&gclid=CjwKCAjwvNaYBhA3EiwACgndgrF-w8UEZfcv0F7bh_CU0L86Q5YxpT-CFzEC2Q-KJ_PY9hhkwLOp_hoCJ-IQAvD_BwE&gclsrc=aw.ds
 
-2. Download Git here: https://git-scm.com/downloads
+Download Git here: https://git-scm.com/downloads
 
-3. Copy your new repo's SSH key (found in the "Code" button at the top of the repo).
+2. Copy your new repo's SSH key (found in the "Code" button at the top of the repo).
 
-4. Use this SSH key to clone the repository using Git
+3. Use this SSH key to clone the repository using Git
 -Use your terminal to navigate to the location at which you would like to save the repo.
 -Use the command "git clone pasteYourSSHKeyHere"
 
-5. Open index.html from the repo to launch the Salary Calculator in your browser.
+4. Open index.html from the repo to launch the Salary Calculator in your browser.
 
 
 
